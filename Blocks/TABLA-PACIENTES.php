@@ -15,22 +15,22 @@
                     de paciente
                 -->
                 <tbody>
-                    <tr onclick="window.location.href='Pacientes-Patient.html'">
+                    <tr onclick="window.location.href='Pacientes-Patient.php'">
                         <td id="id" >0</td>
                         <td class="name" >Juan Perez Garza</td>
                         <td>Presidencia Municipal</td>
                     </tr>
-                    <tr onclick="window.location.href='Pacientes-Patient.html'">
+                    <tr onclick="window.location.href='Pacientes-Patient.php'">
                         <td>1</td>
                         <td class="name">Jose Estrada Mancilla</td>
                         <td>ISTE</td>
                     </tr>
-                    <tr onclick="window.location.href='Pacientes-Patient.html'">
+                    <tr onclick="window.location.href='Pacientes-Patient.php'">
                         <td>2</td>
                         <td class="name" >Alejandro Torres Zuñiga</td>
                         <td>IMSS</td>
                     </tr>
-                    <tr onclick="window.location.href='Pacientes-Patient.html'">
+                    <tr onclick="window.location.href='Pacientes-Patient.php'">
                         <td id="id" >3</td>
                         <td class="name" >Daniel Garcia Ramos</td>
                         <td>ISTE</td>

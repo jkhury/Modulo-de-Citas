@@ -9,7 +9,7 @@
                     <h3>Expediente:</h3>
                     <iframe src="Docs\EjemploExpedienteM.pdf" width="100%" height="500px"></iframe>
                     <hr>
-                    <button onclick="window.location.href='Pacientes-ModifyPaciente.html'">Modificar</button>
+                    <button onclick="window.location.href='Pacientes-ModifyPaciente.php'">Modificar</button>
                     <hr>
 
                 </div>

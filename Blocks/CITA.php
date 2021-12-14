@@ -9,7 +9,7 @@
                     <h3>Notas:</h3>
                     <h4>Masculino P. A. D de 31 años acude a consulta refiriendo cefalea, rinorea, ofinofagia e hipertermia de 38°C. Pasa a filtro de COVID</h4>
                     <hr>
-                    <button onclick="window.location.href='Citas-ModifyCita.html'">Modificar</button>
+                    <button onclick="window.location.href='Citas-ModifyCita.php'">Modificar</button>
                 </div>
             </div>
         </div>

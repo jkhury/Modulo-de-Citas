@@ -14,22 +14,22 @@
                 <!-- Aqui empiezan las consultas van en orden ID/NOMBRE/ESPECIALIDAD -->
                 <!--  -->
                 <tbody>
-                    <tr onclick="window.location.href='Doctores-Doctor.html'">
+                    <tr onclick="window.location.href='Doctores-Doctor.php'">
                         <td id="id" >0</td>
                         <td class="name" >Dr. Daniel Duran Perales</td>
                         <td>Cirujano General</td>
                     </tr>
-                    <tr onclick="window.location.href='Doctores-Doctor.html'">
+                    <tr onclick="window.location.href='Doctores-Doctor.php'">
                         <td>1</td>
                         <td class="name">Dr. Silvia Guevara Arriata</td>
                         <td>Medico General</td>
                     </tr>
-                    <tr onclick="window.location.href='Doctores-Doctor.html'">
+                    <tr onclick="window.location.href='Doctores-Doctor.php'">
                         <td>2</td>
                         <td class="name" >Dr. Oscar Lopez de los Reyes</td>
                         <td>Medico General</td>
                     </tr>
-                    <tr onclick="window.location.href='Doctores-Doctor.html'">
+                    <tr onclick="window.location.href='Doctores-Doctor.php'">
                         <td>3</td>
                         <td class="name" >Dr. Hector Garza Leal</td>
                         <td>Cirujano General</td>
