@@ -1,7 +1,7 @@
         <div class="container">
             <div class="form">
                 <h2>Citas Medicas</h2>
-                <button type="button" onclick="window.location.href='Citas-NuevaCitas.html'">Nueva Cita</button>
+                <button type="button" onclick="window.location.href='Citas-NuevaCita.php'">Nueva Cita</button>
             </div>
             <!--
                 HEYYYY!!!!

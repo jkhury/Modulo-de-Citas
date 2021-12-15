@@ -9,10 +9,16 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
         <link rel="stylesheet" type="text/css" href="Styles/NavStyle.css">
         
+        <script src="Script/CitasJS.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <?php
+            //Conectrar a Base de Datos
+            require ('ControladorBD.php');
+        ?>
     </head>
 
     <body>

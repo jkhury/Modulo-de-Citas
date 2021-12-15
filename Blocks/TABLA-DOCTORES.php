@@ -1,3 +1,7 @@
+<?php
+    $medico_obtension = $medico->getDatos();
+?>
+
 <div class="container">
             <h2>Medicos</h2>   
             <table id="myTable" class="table table-hover">
@@ -13,27 +17,15 @@
                 <!-- KHRAHMEEEEER -->
                 <!-- Aqui empiezan las consultas van en orden ID/NOMBRE/ESPECIALIDAD -->
                 <!--  -->
+
                 <tbody>
-                    <tr onclick="window.location.href='Doctores-Doctor.php'">
-                        <td id="id" >0</td>
-                        <td class="name" >Dr. Daniel Duran Perales</td>
-                        <td>Cirujano General</td>
+                <?php foreach ($medico_obtension as $doc){ ?>
+                    <tr onclick="window.location.href='<?php printf('%s?MedicoID=%s','Doctores-Doctor.php', $doc['MedicoID']);?>'">
+                        <td id="id" ><?php echo $doc['MedicoID'] ??"Desconosido"?></td>
+                        <td class="name" ><?php echo $doc['Nombre'] ??"Desconosido"?> <?php echo $doc['Apellido'] ??"Desconosido"?></td>
+                        <td><?php echo $doc['Esp'] ??"Desconosido"?></td>
                     </tr>
-                    <tr onclick="window.location.href='Doctores-Doctor.php'">
-                        <td>1</td>
-                        <td class="name">Dr. Silvia Guevara Arriata</td>
-                        <td>Medico General</td>
-                    </tr>
-                    <tr onclick="window.location.href='Doctores-Doctor.php'">
-                        <td>2</td>
-                        <td class="name" >Dr. Oscar Lopez de los Reyes</td>
-                        <td>Medico General</td>
-                    </tr>
-                    <tr onclick="window.location.href='Doctores-Doctor.php'">
-                        <td>3</td>
-                        <td class="name" >Dr. Hector Garza Leal</td>
-                        <td>Cirujano General</td>
-                    </tr>
+                    <?php } ?>
                 </tbody>
                 <!-- 
                     Este es el formato que debe de ir en la tabla:

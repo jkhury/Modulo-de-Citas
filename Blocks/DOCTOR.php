@@ -1,4 +1,10 @@
-        <div class="container">
+<?php
+    $MedicoID = $_GET['MedicoID'] ?? 1;
+    foreach ($medico->getDatos() as $doc):
+        if($doc['MedicoID']==$MedicoID):
+?>
+
+<div class="container">
             <div class="row content">
                 <div class="col-sm-3 sidenav">
                     <br>
@@ -15,10 +21,10 @@
                     <!--
                         Aqui empieza la informacion del doctor
                     -->
-                    <h5>ID de Medico: 0</h5>
-                    <h1>Dr. Daniel Duran Perales</h1>
-                    <h2>Cirujano General</h2>
-                    <h4>(834)265-9545</h4>
+                    <h5>ID de Medico: <?php echo $doc['MedicoID'] ??"Desconosido"?></h5>
+                    <h1>Dr. <?php echo $doc['Nombre'] ??"Desconosido"?> <?php echo $doc['Apellido'] ??"Desconosido"?></h1>
+                    <h2><?php echo $doc['Esp'] ??"Desconosido"?></h2>
+                    <h4><?php echo $doc['Tel_Num'] ??"Desconosido"?></h4>
                     <!--
                         Aqui acaba pero sigue meterle la tabla de sus citas pendientes
                         es casi igual que la tabla de citas pero con filtro que solo muestre
@@ -50,3 +56,8 @@
                 </div>
             </div>
         </div>
+
+<?php
+    endif;
+    endforeach;
+?>
