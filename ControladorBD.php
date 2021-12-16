@@ -5,4 +5,5 @@
     $bd = new ConexionBD();
 
     $medico = new Medico($bd);
+
 ?>

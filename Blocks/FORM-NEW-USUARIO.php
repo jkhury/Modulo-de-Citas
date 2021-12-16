@@ -1,14 +1,25 @@
-<div class="container form">
-			<form action="">
+<?php
+	if($_SERVER['REQUEST_METHOD'] == "POST"){
+		if (isset($_POST['nuevo_medico_submit'])){
+			$medico->postDatos($_POST['nombre'], $_POST['apellido'], $_POST['esp'], $_POST['numt']);
+		}
+	}
+?>
+		<div class="container form">
+			<form method="post">
 				<div>
 					<br>
-					<label for="name">Nombre del Usuario</label>
+					<label for="nombre">Nombre del Usuario</label>
 					<br>
-					<input type="text" name="name">
+					<input type="text" name="nombre">
 					<br>
-					<label for="lname">Apellidos del Usuario</label>
+					<label for="apellido">Apellidos del Usuario</label>
 					<br>
-					<input type="text" name="name">
+					<input type="text" name="apellido">
+					<br>
+					<label for="numt">Numero de Telefono</label>
+					<br>
+					<input type="number" name="numt">
 					<br>
 					<label for="type">Tipo de Usuario</label>
 					<br>
@@ -44,6 +55,6 @@
 					<input type="password" name="password" id="password">
 				</div>
 				<br>
-				<button type="button">Agregar Usuario</button>
+				<button type="submit" name ="nuevo_medico_submit" >Agregar Usuario</button>
 			</form>
 		</div>

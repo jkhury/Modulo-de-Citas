@@ -1,4 +1,5 @@
 <?php
+    ob_start();
     //Encabesado
     include ('HEADER.php')
 ?>
