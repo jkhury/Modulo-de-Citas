@@ -20,9 +20,7 @@
                     <tr onclick="window.location.href='<?php printf('%s?PacienteID=%s','Pacientes-Patient.php', $pac['PacienteID']);?>'">
                         <td id="id" ><?php echo $pac['PacienteID'] ??"Desconocido"?></td>
                         <td class="name" ><?php echo $pac['Nombre'] ??"Desconocido"?> <?php echo $pac['Apellido'] ??"Desconocido"?></td>
-                        <td><?php echo $pac['Edad'] ??"Desconocido"?> </td>
                         <td><?php echo $pac['Dependencia'] ??"Desconocido"?> </td>
-                        <td><?php echo $pac['Expediente'] ??"Desconocido"?> </td>
                     </tr>
                     <?php } ?>
                 </tbody>

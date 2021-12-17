@@ -46,9 +46,6 @@
 
                 $ejecutar =$this->insertarDatos($parametros);
 
-                if ($ejecutar){
-                    header("Location :" . $_SERVER['PHP_SELF']);
-                }
                 return $ejecutar;
             }
         }
