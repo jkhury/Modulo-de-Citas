@@ -1,17 +1,27 @@
+<?php
+    $PacienteID = $_GET['PacienteID'];
+    foreach ($paciente->getDatos() as $pac):
+        if($pac['PacienteID']==$PacienteID):
+?>
                 <div class="col-sm-9 form">
-                    <h1>Juan Pérez Garza</h1>
+                    <h1><?php echo $pac['Nombre'] ??"Desconosido"?> <?php echo $pac['Apellido'] ??"Desconocido"?></h1>
+                    <h2><?php echo $pac['Edad'] ??"Desconosido"?> años</h2>
                     <h2>(834)145-8562</h2>
-                    <h3>ID: 1</h3>
+                    <h3>ID: <?php echo $pac['PacienteID'] ??"Desconosido"?></h3>
                     <hr>
                     <h6>Dependencia:</h6>
-                    <h4>Presidencia Municipal</h4>
+                    <h4><?php echo $pac['Dependencia'] ??"Desconosido"?></h4>
                     <hr>
                     <h3>Expediente:</h3>
-                    <iframe src="Docs\EjemploExpedienteM.pdf" width="100%" height="500px"></iframe>
+                    <iframe src="<?php echo $pac['Expediente'] ??"Desconosido"?>" width="100%" height="500px"></iframe>
                     <hr>
-                    <button onclick="window.location.href='Pacientes-ModifyPaciente.php'">Modificar</button>
+                    <button onclick="window.location.href='<?php printf('%s?PacienteID=%s','Pacientes-ModifyPaciente.php', $pac['PacienteID']);?>'">Modificar</button>
                     <hr>
 
                 </div>
             </div>
         </div>
+<?php
+    endif;
+    endforeach;
+?>

@@ -19,13 +19,13 @@
 					<br>
 					<label for="numt">Numero de Telefono</label>
 					<br>
-					<input type="number" name="numt">
+					<input type="tel" name="numt" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
 					<br>
 					<label for="type">Tipo de Usuario</label>
 					<br>
 					<select name="type" id="type">
-						<option value="1">Admin</option>
-						<option value="2">Secre</option>
+						<option value="1">Administrador</option>
+						<option value="2">Secretario</option>
 						<option value="3">Medico</option>
 					</select>
 				</div>
@@ -39,9 +39,29 @@
 						tu solo encargate de que aqui muestre las especialidades en la base de datos
 					-->
 					<select name="esp" id="esp">
-						<option value="1">Especialidad 1</option>
-						<option value="2">Especialidad 2</option>
-						<option value="3">Especialidad 3</option>
+						<option value="Medicina Familiar">Medicina Familiar</option>
+						<option value="Médicina Interna">Médicina Interna</option>
+						<option value="Pediatría">Pediatría</option>
+						<option value="Gineco obstetricia">Gineco obstetricia</option>
+						<option value="Cirugía">Cirugía</option>
+						<option value="Psiquiatría">Psiquiatría</option>
+						<option value="Cardiología">Cardiología</option>
+						<option value="Dermatología">Dermatología</option>
+						<option value="Endocrinología">Endocrinología</option>
+						<option value="Gastroenterología">Gastroenterología</option>
+						<option value="Infectología">Infectología</option>
+						<option value="Nefrología">Nefrología</option>
+						<option value="Oftalmología">Oftalmología</option>
+						<option value="Otorrinolaringología">Otorrinolaringología</option>
+						<option value="Neumología">Neumología</option>
+						<option value="Neurología">Neurología</option>
+						<option value="Radiología">Radiología</option>
+						<option value="Anestesiología">Anestesiología</option>
+						<option value="Oncología">Oncología</option>
+						<option value="Patología">Patología</option>
+						<option value="Urología">Urología</option>
+						<option value="Medicina física y rehabilitación">Medicina física y rehabilitación</option>
+						<option value="Medicina Intensiva">Medicina Intensiva</option>
 					</select>
 				</div>
 				<hr>

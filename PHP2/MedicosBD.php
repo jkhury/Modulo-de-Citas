@@ -28,7 +28,6 @@
                     $values = implode(',' , array_values($parametros));
                     // create sql query
                     $query_string = sprintf("INSERT INTO %s(%s) VALUES(%s)", $tabla, $columna, $values);
-                    print_r($query_string);
                     $ejecutar = $this->bd->conn->query($query_string);
                     return $ejecutar;
                 }

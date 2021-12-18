@@ -30,24 +30,6 @@
                         <td>11/17/2021 10:20 A.M.</td>
                         <td>Dr. Daniel Duran Perales</td>
                     </tr>
-                    <tr onclick="window.location.href='Citas-Cita.html'">
-                        <td>1</td>
-                        <td class="name">Jose Estrada Mancilla</td>
-                        <td>11/16/2021 12:30 A.M.</td>
-                        <td>Dr. Oscar Lopez de los Reyes</td>
-                    </tr>
-                    <tr onclick="window.location.href='Citas-Cita.html'">
-                        <td>2</td>
-                        <td class="name" >Alejandro Torres Zuñiga</td>
-                        <td>11/10/2021 2:40 P.M.</td>
-                        <td>Dr. Hector Garza Leal</td>
-                    </tr>
-                    <tr onclick="window.location.href='Citas-Cita.html'">
-                        <td id="id" >3</td>
-                        <td class="name" >Daniel Garcia Ramos</td>
-                        <td>11/18/2021 12:45 A.M.</td>
-                        <td>Dr. Daniel Duran Perales</td>
-                    </tr>
                 </tbody>
             </table>
             <!--Aqui acaba la tabla cochetumadre-->
