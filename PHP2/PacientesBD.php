@@ -37,9 +37,9 @@
         public function postDatos($nombre, $apellido, $Edad, $numt){
             if (isset($nombre)&&isset($apellido)&&isset($Edad)&&isset($numt)){
                 $parametros = array(
-                    "Nombre" => "\"$nombre\"",
-                    "Apellido" => "\"$apellido\"",
-                    "Edad" => "\"$edad\"",
+                    "Nombre" => "\'$nombre\'",
+                    "Apellido" => "\'$apellido\'",
+                    "Edad" => "\'$edad\'",
                     "Dependencia" => $dependencia
                 );
 
@@ -49,8 +49,36 @@
             }
         }
 
-        public function newDatos($nombre, $apellido, $Edad, $numt){
-            
+        public function updateDatos($id, $parametros = null, $tabla ="paciente"){
+            if ($this->bd->conn != null){
+                if ($parametros != null){
+
+                    $columna = implode(',', array_keys($parametros));
+                    $values = implode(', ' , array_values($parametros));
+                    // create sql query
+
+                    $query_string = sprintf("UPDATE %s SET %s WHERE PacienteID = %s", $tabla, $values, $id);
+                    print_r($query_string);
+                    $actualizar = $this->bd->conn->query($query_string) or die("Error: No se pudo actualizar la consulta");
+                    return $actualizar;
+                }
+            }
+        }
+
+        public function newDatos($nombre, $apellido, $numt, $dependencia, $expd, $id){
+            if (isset($nombre)&&isset($apellido)&&isset($numt)&&isset($dependencia)&&isset($expd)&&isset($id)){
+                $parametros = array(
+                    "Nombre" => "Nombre='$nombre'",
+                    "Apellido" => "Apellido='$apellido'",
+                    //"Tel_Num" => "Tel_Num='$numt'",
+                    "Dependencia" => "Dependencia='$dependencia'",
+                    "Expediente" => "Expediente='$expd'"
+                );
+
+                $actualizar =$this->updateDatos($id, $parametros);
+
+                return $actualizar;
+            }
         }
 
     }

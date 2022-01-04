@@ -1,4 +1,8 @@
 <?php
+    $PacienteID = $_GET['PacienteID'];
+    foreach ($paciente->getDatos() as $pac):
+        if($pac['PacienteID']==$PacienteID):
+
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         if (isset($_POST['submit'])){
             $target_dir = "Docs/";
@@ -13,21 +17,21 @@
                 // if everything is ok, try to upload file
             } else {
                 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                    echo "$target_file";
                     echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
                 } else {
                     echo "Sorry, there was an error uploading your file.";
                 }
-            }
+            } 
 
-            $paciente->newDatos()
+            $paciente->newDatos($_POST['nombre'], $_POST['apellido'], $_POST['numt'], $_POST['dep'], $target_file, $_POST['id']);
 
         }
     }
 ?>
                 <div class="col-sm-9 form">
                     <form method="post" enctype="multipart/form-data">
-                        <h3>ID: 1</h3>
+                        <h3>ID: <?php echo $pac['PacienteID'] ??"Desconosido"?></h3>
+                        <input type="hidden" name="id" value="<?php echo $pac['PacienteID'] ??"Desconosido"?>">
                         <label for="nombre">Nombre</label>
                         <br>
                         <input type="text" name="nombre">
@@ -38,7 +42,7 @@
                         <br>
                         <label for="numt">Num. Telefono</label>
                         <br>
-                        <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                        <input type="number" name="numt">
                         <hr>
                         <label for="dep">Dependencia</label>
                         <br>
@@ -50,7 +54,7 @@
                         <hr>
                         <label>Expeediente</label>
                         <input type="file" name="fileToUpload" id="fileToUpload">
-                        <input type="hidden" name="direccion" value="<?php echo $target_file?>">
+                        <input type="hidden" name="direccion" value="<?php echo "$target_file"?>">
                         <input type="submit" value="Upload Image" name="submit">
                         <hr>
                     </form>
@@ -59,3 +63,7 @@
                 </div>
             </div>
         </div>
+<?php
+    endif;
+    endforeach;
+?>

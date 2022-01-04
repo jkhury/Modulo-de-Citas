@@ -1,35 +1,46 @@
-<div class="container">
+<?php
+    $medico_obtension = $medico->getDatos();
+
+	if($_SERVER['REQUEST_METHOD'] == "POST"){
+		if (isset($_POST['nueva_cita_submit'])){
+			$cita->postDatos($_POST['nombre'], $_POST['apellido'], $_POST['dependencia'], $_POST['doctor'], $_POST['date'], $_POST['time'], $_POST['notes']);
+		}
+	}
+?>
+
+		<div class="container">
 			<br>
 			<div class="row content">
 				<div class="col-sm-6 form">
 					<!--Aqui epieza el formulario de Nueva Cita-->
-					<form action="">
+					<form method="post">
 						<div>
-							<label for="name">Paciente:</label>
-							<input type="text" name="name">
+							<h3>Paciente</h3>
+							<label for="nombre">Nombre:</label>
+							<br>
+							<input type="text" name="nombre">
+							<br>
+							<label for="apellido">Apellido:</label>
+							<br>
+							<input type="text" name="apellido">
 						</div>
 						<br>
 						<div>
-							<label for="dep">Dependencia</label>
-							<select name="dependencia" id="dep">
-								<option value="1">Precidencia Municipal</option>
-								<option value="2">Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado</option>
-								<option value="3">Instituto Mexicano del Seguro Social</option>
+							<label for="dependencia">Dependencia</label>
+							<select name="dependencia">
+								<option value="Precidencia Municipal1">Precidencia Municipal</option>
+								<option value="Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado">Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado</option>
+								<option value="Instituto Mexicano del Seguro Social">Instituto Mexicano del Seguro Social</option>
 							</select>
 						</div>
 						<br>
+						<h3>Cita</h3>
 						<div>
 							<label for="doctor">Medico:</label>
-							<select id="doctor" name="doctor">
-								<optgroup label="Medico General">
-									<option>Dr. Daniel Duran Perales</option>
-								</optgroup>	
-								<optgroup label="Cirujano">
-									<option>Dr. Christian Gray</option>
-								</optgroup>
-								<optgroup label="Patologia">
-									<option>Dr. Gregory House</option>
-								</optgroup>
+							<select name="doctor">
+								<?php foreach ($medico_obtension as $doc){ ?>
+									<option value="<?php echo $doc['MedicoID'] ??"Desconosido"?>">Dr. <?php echo $doc['Nombre'] ??"Desconosido"?> <?php echo $doc['Apellido'] ??"Desconosido"?> - <?php echo $doc['Esp'] ??"Desconosido"?></option>
+								<?php } ?>
 							</select>
 						</div>
 						<br>
@@ -44,9 +55,10 @@
 						<br>
 						<div>
 							<label for="notes">Notas:</label>
+							<br>
 							<textarea name="notes" id="notes" cols="30" rows="10"></textarea>
 						</div>
-						<button>Citar</button>
+						<button name ="nueva_cita_submit">Citar</button>
 					</form>
 					<!--Aqui termina el formulario de Nueva Cita-->
 				</div>

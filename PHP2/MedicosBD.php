@@ -40,7 +40,7 @@
                     "Nombre" => "\"$nombre\"",
                     "Apellido" => "\"$apellido\"",
                     "Esp" => "\"$esp\"",
-                    "Tel_Num" => $numt
+                    "Tel_Num" => "\"$numt\""
                 );
 
                 $ejecutar =$this->insertarDatos($parametros);

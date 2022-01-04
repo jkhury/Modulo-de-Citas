@@ -5,7 +5,7 @@
 ?>
                 <div class="col-sm-9 form">
                     <h1><?php echo $pac['Nombre'] ??"Desconosido"?> <?php echo $pac['Apellido'] ??"Desconocido"?></h1>
-                    <h2><?php echo $pac['Edad'] ??"Desconosido"?> años</h2>
+                    <h2>Edad: <?php echo $pac['Edad'] ??"Desconosida"?></h2>
                     <h2>(834)145-8562</h2>
                     <h3>ID: <?php echo $pac['PacienteID'] ??"Desconosido"?></h3>
                     <hr>

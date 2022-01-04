@@ -1,3 +1,7 @@
+<?php
+    $citas_obtension = $cita->getDatos();
+
+?>     
         <div class="container">
             <div class="form">
                 <h2>Citas Medicas</h2>
@@ -24,13 +28,34 @@
                     de paciente
                 -->
                 <tbody>
-                    <tr onclick="window.location.href='Citas-Cita.php'">
-                        <td id="id" >0</td>
-                        <td class="name" >Juan Perez Garza</td>
-                        <td>11/17/2021 10:20 A.M.</td>
-                        <td>Dr. Daniel Duran Perales</td>
-                    </tr>
+                    <?php foreach ($citas_obtension as $cit){ ?>
+                        <tr onclick="window.location.href='<?php printf('%s?CitasID=%s','Citas-Cita.php', $cit['CitasID']);?>'">
+                            <td id="id" ><?php echo $cit['CitasID'] ??"Desconosido"?></td>
+                            
+                            <?php
+                                $PacienteID = $cit['PacienteID'];
+                                foreach ($paciente->getDatos() as $pac):
+                                    if($pac['PacienteID']==$PacienteID):
+                            ?>
+                            <td class="name" ><?php echo $pac['Nombre'] ??"Desconosido"?> <?php echo $pac['Apellido'] ??"Desconocido"?></td>
+                            <?php
+                                endif;
+                                endforeach;
+                            ?>
+                            <td><?php echo $cit['Fecha'] ??"Desconosido"?> <?php echo $cit['Hora'] ??"Desconosido"?></td>
+
+                            <?php
+                                $MedicoID = $cit['MedicoID'];
+                                foreach ($medico->getDatos() as $doc):
+                                    if($doc['MedicoID']==$MedicoID):
+                            ?>
+                            <td>Dr. <?php echo $doc['Nombre'] ??"Desconosido"?> <?php echo $doc['Apellido'] ??"Desconosido"?></td>
+                            <?php
+                                endif;
+                                endforeach;
+                            ?>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
-            <!--Aqui acaba la tabla cochetumadre-->
         </div>
