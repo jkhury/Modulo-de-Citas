@@ -41,8 +41,8 @@
             }
         }
 
-        public function postDatos($nombre, $apellido, $dependencia, $doctor, $date, $time, $notes){
-            if (isset($nombre)&&isset($apellido)&&isset($dependencia)&&isset($doctor)&&isset($date)&&isset($time)&&isset($notes)){
+        public function postDatos($doctor, $fecha, $dependencia, $nombre, $date, $time, $notes){
+            if (isset($doctor)&&isset($fecha)&&isset($dependencia)&&isset($nombre)&&isset($date)&&isset($time)&&isset($notes)){
                 $nuevacita = array(
                 "MedicoID" => $doctor,
                 "Fecha" => "\"$date\"",
@@ -52,13 +52,57 @@
 
                 $paciente = array(
                 "Nombre" => "\"$nombre\"",
-                "Apellido" => "\"$apellido\"",
+                "Apellido" => "\"$fecha\"",
                 "Dependencia" => "\"$dependencia\""
+                
                 );
 
                 $ejecutar =$this->insertarDatos($paciente, $nuevacita);
 
                 return $ejecutar;
+            }
+        }
+
+        public function updateDatos($id, $parametros = null, $tabla ="citas"){
+            if ($this->bd->conn != null){
+                if ($parametros != null){
+
+                    $columna = implode(',', array_keys($parametros));
+                    $values = implode(', ' , array_values($parametros));
+                    // create sql query
+
+                    $query_string = sprintf("UPDATE %s SET %s WHERE CitasID = %s", $tabla, $values, $id);
+                    print_r($query_string);
+                    $actualizar = $this->bd->conn->query($query_string) or die("Error: No se pudo actualizar la consulta");
+                    return $actualizar;
+                }
+            }
+        }
+
+        public function newDatos($doctor, $fecha, $hora, $fechan, $horan, $peso, $talla, $cc, $inmc, $temp, $ta, $fc, $fr, $notes, $obs, $prono, $id){
+            if (isset($doctor)&&isset($fecha)&&isset($hora)&&isset($fechan)&&isset($horan)&&isset($peso)&&isset($talla)&&isset($cc)&&isset($inmc)&&isset($temp)&&isset($ta)&&isset($fc)&&isset($fr)&&isset($notes)&&isset($obs)&&isset($prono)&&isset($id)){
+                $parametros = array(
+                    "MedicoID" => "MedicoID='$doctor'",
+                    "Fecha" => "Fecha='$fecha'",
+                    "Hora" => "Hora='$hora'",
+                    "Fecha_Nota" => "Fecha_Nota='$fechan'",
+                    "Hora_Nota" => "Hora_Nota='$horan'",
+                    "Peso" => "Peso='$peso'",
+                    "Talla" => "Talla='$talla'",
+                    "CircuCin" => "CircuCin='$cc'",
+                    "InMC" => "InMC='$inmc'",
+                    "Temp" => "Temp='$temp'",
+                    "TenArt" => "TenArt='$ta'",
+                    "FreCar" => "FreCar='$fc'",
+                    "FreResp" => "FreResp='$fr'",
+                    "Notas" => "Notas='$notes'",
+                    "Obs" => "Obs='$obs'",
+                    "Prono" => "Prono='$prono'",
+                );
+
+                $actualizar =$this->updateDatos($id, $parametros);
+
+                return $actualizar;
             }
         }
     }

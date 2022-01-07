@@ -4,7 +4,7 @@
 ?>
 <?php
     //Cuerpo
-    include ('Blocks/PACIENTE-NAV.php');
+    //include ('Blocks/PACIENTE-NAV.php');
     include ('Blocks/MODIFY-PACIENTE.php');
 ?>
 <?php

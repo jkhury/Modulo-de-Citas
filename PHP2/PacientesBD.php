@@ -66,7 +66,7 @@
         }
 
         public function newDatos($nombre, $apellido, $numt, $dependencia, $expd, $id){
-            if (isset($nombre)&&isset($apellido)&&isset($numt)&&isset($dependencia)&&isset($expd)&&isset($id)){
+            if (isset($nombre)&&isset($apellido)&&isset($dependencia)&&isset($expd)&&isset($id)){
                 $parametros = array(
                     "Nombre" => "Nombre='$nombre'",
                     "Apellido" => "Apellido='$apellido'",
