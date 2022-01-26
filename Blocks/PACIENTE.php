@@ -93,16 +93,6 @@
                             <tr align="left">
                                 <td colspan="3"><strong>Indice de Masa Corporal:</strong> <?php echo $cit['InMC'] ??"-"?></td>
                             </tr>
-<<<<<<< HEAD
-=======
-
-                            <tr align="left">
-                                <td colspan="9"><strong>Observacion:</strong> <?php echo $cit['Obs'] ??"-"?></td>
-                            </tr>
-                            <tr align="left">
-                                <td colspan="9"><strong>Pronostico:</strong> <?php echo $cit['Prono'] ??"-"?></td>
-                            </tr>
->>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
                         </table> 
                         <?php
                             $MedicoID = $cit['MedicoID'] ?? 1;
@@ -116,11 +106,7 @@
                             endforeach;
                         ?>
 
-<<<<<<< HEAD
                         <button onclick="window.location.href='<?php printf('%s?CitasID=%s','Citas-ModifyCita.php', $cit['CitasID']);?>'" class="btn btn-warning">Modificar Notas</button>
-=======
-                        <button onclick="window.location.href='<?php printf('%s?CitasID=%s','Citas-ModifyCita.php', $cit['CitasID']);?>'">Modificar</button>
->>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
                     </div>
                     
                     
@@ -128,11 +114,8 @@
                         endif;
                         endforeach;
                     ?>
-<<<<<<< HEAD
                     <hr>
                     <br>.
-=======
->>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
                 </div>
             </div>
         </div>
