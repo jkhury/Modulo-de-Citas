@@ -8,7 +8,11 @@
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         if (isset($_POST['submit'])){
+<<<<<<< HEAD
             $cita->newDatos($_POST['doctor'], $_POST['fecha'], $_POST['hora'], $_POST['fechan'], $_POST['horan'], $_POST['peso'], $_POST['talla'], $_POST['cc'], $_POST['inmc'], $_POST['temp'], $_POST['ta'], $_POST['fc'], $_POST['fr'], $_POST['notes'], $_POST['id']);
+=======
+            $cita->newDatos($_POST['doctor'], $_POST['fecha'], $_POST['hora'], $_POST['fechan'], $_POST['horan'], $_POST['peso'], $_POST['talla'], $_POST['cc'], $_POST['inmc'], $_POST['temp'], $_POST['ta'], $_POST['fc'], $_POST['fr'], $_POST['notes'], $_POST['obs'], $_POST['prono'], $_POST['id']);
+>>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
         }
     }
 ?>
@@ -113,7 +117,20 @@
 						<textarea name="notes" id="notes" cols="30" rows="10"><?php echo $cit['Notas'] ??"Desconocido"?></textarea>
 
 						<hr>
+<<<<<<< HEAD
 						
+=======
+						<label for="obs">Observaciones:</label>
+						<br>
+						<textarea name="obs" id="obs" cols="30" rows="10"><?php echo $cit['Obs'] ??"-"?></textarea>
+
+						<hr>
+						<label for="prono">Pronostico:</label>
+						<br>
+						<textarea name="prono" id="prono" cols="30" rows="10"><?php echo $cit['Prono'] ??"-"?></textarea>
+						
+                        <hr>
+>>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
 
                         <input type="submit" value="Guardar Cambios" name="submit">
                         <hr>

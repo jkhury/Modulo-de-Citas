@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Jan 18, 2022 at 01:26 AM
+=======
+-- Generation Time: Jan 07, 2022 at 01:59 AM
+>>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -31,15 +35,34 @@ CREATE TABLE `citas` (
   `CitasID` int(11) NOT NULL,
   `Fecha` date NOT NULL,
   `Hora` time NOT NULL,
+<<<<<<< HEAD
   `Consultorio` int(11) NOT NULL,
   `MedicoID` int(11) NOT NULL,
   `PacienteID` int(11) NOT NULL
+=======
+  `MedicoID` int(11) NOT NULL,
+  `PacienteID` int(11) NOT NULL,
+  `Notas` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `Fecha_Nota` date DEFAULT NULL,
+  `Hora_Nota` time DEFAULT NULL,
+  `Peso` float DEFAULT NULL,
+  `TenArt` int(11) DEFAULT NULL,
+  `FreCar` int(11) DEFAULT NULL,
+  `FreResp` int(11) DEFAULT NULL,
+  `Temp` float DEFAULT NULL,
+  `CircuCin` float DEFAULT NULL,
+  `InMC` float DEFAULT NULL,
+  `Talla` int(11) DEFAULT NULL,
+  `Obs` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Prono` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+>>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `citas`
 --
 
+<<<<<<< HEAD
 INSERT INTO `citas` (`CitasID`, `Fecha`, `Hora`, `Consultorio`, `MedicoID`, `PacienteID`) VALUES
 (5, '2022-01-03', '13:30:00', 0, 6, 15),
 (6, '2021-12-29', '11:30:00', 0, 6, 16),
@@ -49,6 +72,12 @@ INSERT INTO `citas` (`CitasID`, `Fecha`, `Hora`, `Consultorio`, `MedicoID`, `Pac
 (10, '2022-01-11', '07:00:00', 0, 6, 21),
 (11, '2022-01-18', '10:00:00', 0, 6, 22),
 (12, '2022-01-18', '10:00:00', 0, 6, 23);
+=======
+INSERT INTO `citas` (`CitasID`, `Fecha`, `Hora`, `MedicoID`, `PacienteID`, `Notas`, `Fecha_Nota`, `Hora_Nota`, `Peso`, `TenArt`, `FreCar`, `FreResp`, `Temp`, `CircuCin`, `InMC`, `Talla`, `Obs`, `Prono`) VALUES
+(5, '2022-01-03', '13:30:00', 6, 15, 'Cita General', '2022-01-03', '13:45:00', 80, 121, 70, 10, 36.5, 80.5, 36, 160, 'Observacion de el paciente', 'Pronostico del paciente'),
+(6, '2021-12-29', '11:30:00', 6, 16, 'General', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, '2022-01-05', '13:30:00', 6, 15, 'Cita General', '2022-01-05', '13:45:00', 80, 121, 70, 10, 36.5, 80.5, 36, 160, NULL, NULL);
+>>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
 
 -- --------------------------------------------------------
 
@@ -74,6 +103,7 @@ INSERT INTO `medico` (`MedicoID`, `Nombre`, `Apellido`, `Esp`, `Tel_Num`) VALUES
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Table structure for table `nota`
 --
 
@@ -107,6 +137,8 @@ INSERT INTO `nota` (`NotaMedID`, `Notas`, `Fecha_Nota`, `Hora_Nota`, `Peso`, `Te
 -- --------------------------------------------------------
 
 --
+=======
+>>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
 -- Table structure for table `paciente`
 --
 
@@ -127,6 +159,7 @@ CREATE TABLE `paciente` (
 
 INSERT INTO `paciente` (`Nombre`, `Apellido`, `Edad`, `Dependencia`, `Expediente`, `PacienteID`, `Curp`, `Sex`) VALUES
 ('Francisco', 'Jimenez', '1999-09-07', 'Precidencia Municipal', 'Docs/Expedientemedico2.pdf', 15, 'JIMFRAN119259HTSMR', 'Masculino'),
+<<<<<<< HEAD
 ('Francisco', 'Mendez', NULL, '2', NULL, 16, NULL, ''),
 ('1990-03-22', 'Casa', NULL, 'Maculino', NULL, 17, NULL, ''),
 ('1990-03-22', 'Casa', NULL, 'Maculino', NULL, 18, NULL, ''),
@@ -135,6 +168,9 @@ INSERT INTO `paciente` (`Nombre`, `Apellido`, `Edad`, `Dependencia`, `Expediente
 ('Maria', 'Guerra', '1999-02-10', 'Instituto Mexicano del Seguro Social', NULL, 21, '', 'Femenino'),
 ('Carla', 'Torres', '0000-00-00', 'Desconocida', NULL, 22, '', 'Femenino'),
 ('Carla', 'Torres', '0000-00-00', 'Desconocida', NULL, 23, '', 'Femenino');
+=======
+('Francisco', 'Mendez', NULL, '2', NULL, 16, NULL, '');
+>>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
 
 -- --------------------------------------------------------
 
@@ -168,12 +204,15 @@ ALTER TABLE `medico`
   ADD PRIMARY KEY (`MedicoID`);
 
 --
+<<<<<<< HEAD
 -- Indexes for table `nota`
 --
 ALTER TABLE `nota`
   ADD KEY `nota_cita` (`CitasID`);
 
 --
+=======
+>>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
 -- Indexes for table `paciente`
 --
 ALTER TABLE `paciente`
@@ -193,7 +232,11 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `citas`
 --
 ALTER TABLE `citas`
+<<<<<<< HEAD
   MODIFY `CitasID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+=======
+  MODIFY `CitasID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+>>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
 
 --
 -- AUTO_INCREMENT for table `medico`
@@ -205,7 +248,11 @@ ALTER TABLE `medico`
 -- AUTO_INCREMENT for table `paciente`
 --
 ALTER TABLE `paciente`
+<<<<<<< HEAD
   MODIFY `PacienteID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+=======
+  MODIFY `PacienteID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+>>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
 
 --
 -- AUTO_INCREMENT for table `usuario`
@@ -223,12 +270,15 @@ ALTER TABLE `usuario`
 ALTER TABLE `citas`
   ADD CONSTRAINT `cita_medico` FOREIGN KEY (`MedicoID`) REFERENCES `medico` (`MedicoID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `cita_paciente` FOREIGN KEY (`PacienteID`) REFERENCES `paciente` (`PacienteID`) ON DELETE CASCADE ON UPDATE CASCADE;
+<<<<<<< HEAD
 
 --
 -- Constraints for table `nota`
 --
 ALTER TABLE `nota`
   ADD CONSTRAINT `nota_cita` FOREIGN KEY (`CitasID`) REFERENCES `citas` (`CitasID`) ON DELETE CASCADE ON UPDATE CASCADE;
+=======
+>>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

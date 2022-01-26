@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html>
@@ -35,3 +36,14 @@ footer {
 
 </footer>
 <!-- Footer -->
+=======
+        <footer name="footer" class="container-fluid text-center">
+            <p>Sistemas de Citas - 2022
+                <br>Version Pre-alpha
+                <br>Cualquier problema con este software favor de reportar a el departamento de Sistemas del Hospital Civil.
+            </p>
+        </footer>
+    </body>
+    
+</html>
+>>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
