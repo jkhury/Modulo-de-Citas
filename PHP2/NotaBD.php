@@ -1,6 +1,6 @@
 <?php
 
-    class Cita{
+    class Nota{
         public $bd = null;
 
         public function __construct(ConexionBD $bd){
@@ -8,7 +8,7 @@
             $this->bd = $bd;
         }
 
-        public function getDatos($tabla = 'citas'){
+        public function getDatos($tabla = 'nota'){
             $select = $this->bd->conn->query(query:"SELECT * FROM {$tabla}");
 
             $selectArreglo = array();

@@ -2,12 +2,12 @@
 
 <html>
     <head>
-        <title>Modulo de Citas</title>
+        <title>Sistema de Citas</title>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-        <link rel="stylesheet" type="text/css" href="Styles/NavStyle.css">
+       
         
         <script src="Script/CitasJS.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -23,11 +23,9 @@
 
     <body>
         <header id="head">
-            <nav class="navbar navbar-inverse">
+            <nav class="navbar navbar-expand-sm bg-info navbar-dark">
                 <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand">Citas Hospital Civil</a>
-                    </div>
+                  
 
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
@@ -43,3 +41,6 @@
         </header>
 
         <main id="body">
+        </body> 
+  
+</html>   

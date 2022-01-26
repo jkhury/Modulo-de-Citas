@@ -4,7 +4,7 @@
 
 
  <div class="container">
-            <h2>pacientes</h2>
+            <h2>Pacientes</h2>
             <table id="myTable" class="table table-hover">
                 <thead>
                     <tr>

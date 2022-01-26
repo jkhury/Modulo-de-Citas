@@ -23,7 +23,7 @@
 					<br>
 					<label for="type">Tipo de Usuario</label>
 					<br>
-					<select name="type" id="type">
+					<select name="type" id="type" class="custom-select mr-sm-2">
 						<option value="1">Administrador</option>
 						<option value="2">Secretario</option>
 						<option value="3">Medico</option>
@@ -38,7 +38,7 @@
 						de medico voy a hacer tantita magia de en javascript para hacer que eso pase
 						tu solo encargate de que aqui muestre las especialidades en la base de datos
 					-->
-					<select name="esp" id="esp">
+					<select name="esp" id="esp" class="custom-select mr-sm-2">
 						<option value="Medicina Familiar">Medicina Familiar</option>
 						<option value="Médicina Interna">Médicina Interna</option>
 						<option value="Pediatría">Pediatría</option>
@@ -75,6 +75,8 @@
 					<input type="password" name="password" id="password">
 				</div>
 				<br>
-				<button type="submit" name ="nuevo_medico_submit" >Agregar Usuario</button>
+				<button type="submit" name ="nuevo_medico_submit" class="btn btn-success" >Agregar Usuario</button>
+				<hr>
+				<br>.
 			</form>
 		</div>
