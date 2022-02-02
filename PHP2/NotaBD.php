@@ -20,57 +20,29 @@
             return $selectArreglo;
         }
 
-        public function insertarDatos($paciente = null, $nuevacita = null, $nota = null, $tablac ="citas", $tablap ="paciente", $tablan ="nota"){
+        public function insertarDatos($nota = null, $tabla ="nota"){
             if ($this->bd->conn != null){
-                if (($paciente != null) && ($nuevacita != null)){
-                    $columnap = implode(',', array_keys($paciente));
-                    $valuesp = implode(',' , array_values($paciente));
+                if (($nota != null)){
+                    $columna = implode(',', array_keys($nota));
+                    $values = implode(',' , array_values($nota));
 
-                    $columnac = implode(',', array_keys($nuevacita));
-                    $valuesc = implode(',' , array_values($nuevacita));
+                    $query_string = sprintf("INSERT INTO %s(CitasID, %s) VALUES(LAST_INSERT_ID(), %s)", $tabla, $columna,$values);
+                    $ejecutar = $this->bd->conn->query($query_string);
 
-                    $columnan = implode(',', array_keys($nota));
-                    $valuesn = implode(',' , array_values($nota));
-
-                    // create sql query
-                    $query_string_one = sprintf("INSERT INTO %s(%s) VALUES(%s)", $tablap, $columnap, $valuesp);
-                    $ejecutar_one = $this->bd->conn->query($query_string_one);
-                    
-                    $query_string_two = sprintf("INSERT INTO %s(PacienteID, %s) VALUES(LAST_INSERT_ID(), %s)", $tablac, $columnac,$valuesc);
-                    $ejecutar_two = $this->bd->conn->query($query_string_two);
-
-                    $query_string_three = sprintf("INSERT INTO %s(CitasID, %s) VALUES(LAST_INSERT_ID(), %s)", $tablan, $columnan,$valuesn);
-                    $ejecutar_three = $this->bd->conn->query($query_string_three);
-
-                    return array($ejecutar_one, $ejecutar_two,$ejecutar_three);
+                    return array(,$ejecutar);
                 }
             }
         }
 
-        public function postDatos($nombre, $apellido, $sexo, $dob, $curp, $dependencia, $doctor, $date, $time, $notes){
-            if (isset($nombre)&&isset($apellido)&&isset($dependencia)&&isset($doctor)&&isset($date)&&isset($time)&&isset($notes)){
-                $nuevacita = array(
-                    "MedicoID" => $doctor,
-                    "Fecha" => "\"$date\"",
-                    "Hora" => "\"$time\""
-                    );
-
-                $paciente = array(
-                    "Nombre" => "\"$nombre\"",
-                    "Apellido" => "\"$apellido\"",
-                    "Sex" => "\"$sexo\"",
-                    "Edad" => "\"$dob\"",
-                    "Curp" => "\"$curp\"",
-                    "Dependencia" => "\"$dependencia\""
-                    );
-
+        public function postDatos($notes){
+            if (isset($notes)){
                 $nota = array(
                     "Notas" =>"\"$notes\""
-                    );
+                );
 
-                $ejecutar =$this->insertarDatos($paciente, $nuevacita, $nota);
+                $ejecutar =$this->insertarDatos($nota);
 
-                return $ejecutar;
+                return $nota;
             }
         }
 
@@ -92,10 +64,7 @@
 
         public function newDatos($doctor, $fecha, $hora, $fechan, $horan, $peso, $talla, $cc, $inmc, $temp, $ta, $fc, $fr, $notes, $id){
             if (isset($doctor)&&isset($fecha)&&isset($hora)&&isset($fechan)&&isset($horan)&&isset($peso)&&isset($talla)&&isset($cc)&&isset($inmc)&&isset($temp)&&isset($ta)&&isset($fc)&&isset($fr)&&isset($notes)&&isset($id)){
-                $parametros = array(
-                    "MedicoID" => "MedicoID='$doctor'",
-                    "Fecha" => "Fecha='$fecha'",
-                    "Hora" => "Hora='$hora'",
+                $nota = array(
                     "Fecha_Nota" => "Fecha_Nota='$fechan'",
                     "Hora_Nota" => "Hora_Nota='$horan'",
                     "Peso" => "Peso='$peso'",
@@ -106,7 +75,7 @@
                     "TenArt" => "TenArt='$ta'",
                     "FreCar" => "FreCar='$fc'",
                     "FreResp" => "FreResp='$fr'",
-                    "Notas" => "Notas='$notes'",
+                    "Notas" => "Notas='$notes'"
                 );
 
                 $actualizar =$this->updateDatos($id, $parametros);

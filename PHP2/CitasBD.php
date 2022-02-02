@@ -47,8 +47,8 @@
             }
         }
 
-        public function postDatos($doctor, $fecha, $dependencia, $nombre, $date, $time, $notes){
-            if (isset($doctor)&&isset($fecha)&&isset($dependencia)&&isset($nombre)&&isset($date)&&isset($time)&&isset($notes)){
+        public function postDatos($nombre, $apellido, $sexo, $dob, $curp, $dependencia, $doctor, $date, $time, $notes){
+            if (isset($nombre)&&isset($apellido)&&isset($sexo)&&isset($dob)&&isset($curp)&&isset($dependencia)&&isset($doctor)&&isset($date)&&isset($time)&&isset($notes)){
                 $nuevacita = array(
                     "MedicoID" => $doctor,
                     "Fecha" => "\"$date\"",
@@ -92,12 +92,15 @@
         }
 
         
-        public function newDatos($doctor, $fecha, $hora, $fechan, $horan, $peso, $talla, $cc, $inmc, $temp, $ta, $fc, $fr, $notes, $obs, $prono, $id){
-            if (isset($doctor)&&isset($fecha)&&isset($hora)&&isset($fechan)&&isset($horan)&&isset($peso)&&isset($talla)&&isset($cc)&&isset($inmc)&&isset($temp)&&isset($ta)&&isset($fc)&&isset($fr)&&isset($notes)&&isset($obs)&&isset($prono)&&isset($id)){
-                $parametros = array(
+        public function newDatos($doctor, $fecha, $hora, $fechan, $horan, $peso, $talla, $cc, $inmc, $temp, $ta, $fc, $fr, $notes, $id){
+            if (isset($doctor)&&isset($fecha)&&isset($hora)&&isset($fechan)&&isset($horan)&&isset($peso)&&isset($talla)&&isset($cc)&&isset($inmc)&&isset($temp)&&isset($ta)&&isset($fc)&&isset($fr)&&isset($notes)&&isset($id)){
+                $cita = array(
                     "MedicoID" => "MedicoID='$doctor'",
                     "Fecha" => "Fecha='$fecha'",
-                    "Hora" => "Hora='$hora'",
+                    "Hora" => "Hora='$hora'"
+                );
+
+                $nota = array(
                     "Fecha_Nota" => "Fecha_Nota='$fechan'",
                     "Hora_Nota" => "Hora_Nota='$horan'",
                     "Peso" => "Peso='$peso'",
@@ -108,11 +111,10 @@
                     "TenArt" => "TenArt='$ta'",
                     "FreCar" => "FreCar='$fc'",
                     "FreResp" => "FreResp='$fr'",
-                    "Notas" => "Notas='$notes'",
-                    "Obs" => "Obs='$obs'",
-                    "Prono" => "Prono='$prono'",
+                    "Notas" => "Notas='$notes'"
                 );
 
+                
                 $actualizar =$this->updateDatos($id, $parametros);
 
                 return $actualizar;

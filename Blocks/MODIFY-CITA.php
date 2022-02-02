@@ -113,20 +113,6 @@
 						<textarea name="notes" id="notes" cols="30" rows="10"><?php echo $cit['Notas'] ??"Desconocido"?></textarea>
 
 						<hr>
-<<<<<<< HEAD
-						
-=======
-						<label for="obs">Observaciones:</label>
-						<br>
-						<textarea name="obs" id="obs" cols="30" rows="10"><?php echo $cit['Obs'] ??"-"?></textarea>
-
-						<hr>
-						<label for="prono">Pronostico:</label>
-						<br>
-						<textarea name="prono" id="prono" cols="30" rows="10"><?php echo $cit['Prono'] ??"-"?></textarea>
-						
-                        <hr>
->>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
 
                         <input type="submit" value="Guardar Cambios" name="submit">
                         <hr>
@@ -134,6 +120,9 @@
                     
 
                 </div>
+                
+                <hr>
+                <br>.
             </div>
         </div>
 <?php

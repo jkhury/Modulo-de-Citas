@@ -120,7 +120,7 @@
                             endif;
                             endforeach;
                         ?>
-                    <button class="btn btn-info onclick="window.location.href=' <?php printf('%s?CitasID=%s','Citas-ModifyCita.php', $cit['CitasID']);?>'" class="btn btn-success" >Modificar</button>
+                    <button class="btn btn-info" onclick="window.location.href='<?php printf('%s?CitasID=%s','Citas-ModifyCita.php', $cit['CitasID']);?>'" class="btn btn-success" >Modificar</button>
 
                     <hr>
                     <br>.
