@@ -37,8 +37,8 @@
                     <h4><?php echo $pac['Dependencia'] ??"Desconocido"?></h4>
                     <hr>
                     <h3>Expediente:</h3>
-                    <iframe src="<?php echo $pac['Expediente'] ??"Desconocido"?>" width="100%" height="500px"></iframe>
                     <hr>
+                    <embed src="<?php echo $pac['Expediente'] ??"Desconocido"?>#toolbar=0" width="100%" height="500px">
                     <button onclick="window.location.href='<?php printf('%s?PacienteID=%s','Pacientes-ModifyPaciente.php', $pac['PacienteID']);?>'" class="btn btn-warning" >Modificar Expediente</button>
                     <hr>
 
@@ -52,6 +52,11 @@
                     <div>
                         <hr>
                         <h3>Folio: <?php echo $cit['CitasID'] ??"Desconocido"?></h3>
+                        <?php
+                            foreach ($cita->getDatos() as $cit):
+                                if($cit['PacienteID']==$PacienteID):
+                        ?>
+                        <h4>Nota Medica: </h4>
                         <table class="col-sm-12" border="1">
                             <tr align="left">
                                 <td colspan="3"><strong>Fecha:</strong> <?php echo $cit['Fecha_Nota'] ??"-"?></td>
@@ -93,16 +98,6 @@
                             <tr align="left">
                                 <td colspan="3"><strong>Indice de Masa Corporal:</strong> <?php echo $cit['InMC'] ??"-"?></td>
                             </tr>
-<<<<<<< HEAD
-=======
-
-                            <tr align="left">
-                                <td colspan="9"><strong>Observacion:</strong> <?php echo $cit['Obs'] ??"-"?></td>
-                            </tr>
-                            <tr align="left">
-                                <td colspan="9"><strong>Pronostico:</strong> <?php echo $cit['Prono'] ??"-"?></td>
-                            </tr>
->>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
                         </table> 
                         <?php
                             $MedicoID = $cit['MedicoID'] ?? 1;
@@ -116,11 +111,7 @@
                             endforeach;
                         ?>
 
-<<<<<<< HEAD
                         <button onclick="window.location.href='<?php printf('%s?CitasID=%s','Citas-ModifyCita.php', $cit['CitasID']);?>'" class="btn btn-warning">Modificar Notas</button>
-=======
-                        <button onclick="window.location.href='<?php printf('%s?CitasID=%s','Citas-ModifyCita.php', $cit['CitasID']);?>'">Modificar</button>
->>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
                     </div>
                     
                     
@@ -128,11 +119,8 @@
                         endif;
                         endforeach;
                     ?>
-<<<<<<< HEAD
                     <hr>
                     <br>.
-=======
->>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
                 </div>
             </div>
         </div>

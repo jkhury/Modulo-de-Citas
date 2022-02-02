@@ -107,7 +107,6 @@
                             <tr align="left">
                                 <td colspan="3"><strong>Indice de Masa Corporal:</strong> <?php echo $cit['InMC'] ??"-"?></td>
                             </tr>
-<<<<<<< HEAD
                         </table> 
 
                         <?php
@@ -121,21 +120,10 @@
                             endif;
                             endforeach;
                         ?>
-                    <button class="btn btn-info onclick="window.location.href=' <?php printf('%s?CitasID=%s','Citas-ModifyCita.php', $cit['CitasID']);?>'" class="btn btn-success" >Modificar</button>
+                    <button class="btn btn-info" onclick="window.location.href='<?php printf('%s?CitasID=%s','Citas-ModifyCita.php', $cit['CitasID']);?>'" class="btn btn-success" >Modificar</button>
 
                     <hr>
                     <br>.
-=======
-
-                            <tr align="left">
-                                <td colspan="9"><strong>Observacion:</strong> <?php echo $cit['Obs'] ??"-"?></td>
-                            </tr>
-                            <tr align="left">
-                                <td colspan="9"><strong>Pronostico:</strong> <?php echo $cit['Prono'] ??"-"?></td>
-                            </tr>
-                        </table> 
-                    <button onclick="window.location.href='<?php printf('%s?CitasID=%s','Citas-ModifyCita.php', $cit['CitasID']);?>'">Modificar</button>
->>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
                 </div>
                 
             </div>

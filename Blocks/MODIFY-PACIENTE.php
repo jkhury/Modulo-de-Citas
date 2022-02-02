@@ -80,13 +80,9 @@
                         <label>Expeediente</label>
                         <input type="file" name="fileToUpload" id="fileToUpload">
                         <input type="hidden" name="direccion" value="<?php echo "$target_file"?>">
-<<<<<<< HEAD
 
                         <hr></hr>
                         <input type="submit" value="Guardar Cambios" name="submit" class="btn btn-success" >
-=======
-                        <input type="submit" value="Guardar Cambios" name="submit">
->>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
                         <hr>
                     </form>
                     

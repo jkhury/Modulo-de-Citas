@@ -58,4 +58,6 @@
                     <?php } ?>
                 </tbody>
             </table>
+            <br>.
+            <hr>
         </div>

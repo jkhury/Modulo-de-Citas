@@ -47,13 +47,8 @@
             }
         }
 
-<<<<<<< HEAD
         public function postDatos($nombre, $apellido, $sexo, $dob, $curp, $dependencia, $doctor, $date, $time, $notes){
-            if (isset($nombre)&&isset($apellido)&&isset($dependencia)&&isset($doctor)&&isset($date)&&isset($time)&&isset($notes)){
-=======
-        public function postDatos($doctor, $fecha, $dependencia, $nombre, $date, $time, $notes){
-            if (isset($doctor)&&isset($fecha)&&isset($dependencia)&&isset($nombre)&&isset($date)&&isset($time)&&isset($notes)){
->>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
+            if (isset($nombre)&&isset($apellido)&&isset($sexo)&&isset($dob)&&isset($curp)&&isset($dependencia)&&isset($doctor)&&isset($date)&&isset($time)&&isset($notes)){
                 $nuevacita = array(
                     "MedicoID" => $doctor,
                     "Fecha" => "\"$date\"",
@@ -61,7 +56,6 @@
                     );
 
                 $paciente = array(
-<<<<<<< HEAD
                     "Nombre" => "\"$nombre\"",
                     "Apellido" => "\"$apellido\"",
                     "Sex" => "\"$sexo\"",
@@ -69,13 +63,7 @@
                     "Curp" => "\"$curp\"",
                     "Dependencia" => "\"$dependencia\""
                     );
-=======
-                "Nombre" => "\"$nombre\"",
-                "Apellido" => "\"$fecha\"",
-                "Dependencia" => "\"$dependencia\""
                 
-                );
->>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
 
                 $nota = array(
                     "Notas" =>"\"$notes\""
@@ -103,17 +91,16 @@
             }
         }
 
-<<<<<<< HEAD
+        
         public function newDatos($doctor, $fecha, $hora, $fechan, $horan, $peso, $talla, $cc, $inmc, $temp, $ta, $fc, $fr, $notes, $id){
             if (isset($doctor)&&isset($fecha)&&isset($hora)&&isset($fechan)&&isset($horan)&&isset($peso)&&isset($talla)&&isset($cc)&&isset($inmc)&&isset($temp)&&isset($ta)&&isset($fc)&&isset($fr)&&isset($notes)&&isset($id)){
-=======
-        public function newDatos($doctor, $fecha, $hora, $fechan, $horan, $peso, $talla, $cc, $inmc, $temp, $ta, $fc, $fr, $notes, $obs, $prono, $id){
-            if (isset($doctor)&&isset($fecha)&&isset($hora)&&isset($fechan)&&isset($horan)&&isset($peso)&&isset($talla)&&isset($cc)&&isset($inmc)&&isset($temp)&&isset($ta)&&isset($fc)&&isset($fr)&&isset($notes)&&isset($obs)&&isset($prono)&&isset($id)){
->>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
-                $parametros = array(
+                $cita = array(
                     "MedicoID" => "MedicoID='$doctor'",
                     "Fecha" => "Fecha='$fecha'",
-                    "Hora" => "Hora='$hora'",
+                    "Hora" => "Hora='$hora'"
+                );
+
+                $nota = array(
                     "Fecha_Nota" => "Fecha_Nota='$fechan'",
                     "Hora_Nota" => "Hora_Nota='$horan'",
                     "Peso" => "Peso='$peso'",
@@ -124,14 +111,10 @@
                     "TenArt" => "TenArt='$ta'",
                     "FreCar" => "FreCar='$fc'",
                     "FreResp" => "FreResp='$fr'",
-                    "Notas" => "Notas='$notes'",
-<<<<<<< HEAD
-=======
-                    "Obs" => "Obs='$obs'",
-                    "Prono" => "Prono='$prono'",
->>>>>>> 63d4c50e001a59982f46945199fe0566344f8eb7
+                    "Notas" => "Notas='$notes'"
                 );
 
+                
                 $actualizar =$this->updateDatos($id, $parametros);
 
                 return $actualizar;
