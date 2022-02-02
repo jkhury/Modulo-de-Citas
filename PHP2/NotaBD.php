@@ -34,9 +34,10 @@
             }
         }
 
-        public function postDatos($notes){
-            if (isset($notes)){
+        public function postDatos($notes,$citaid){
+            if (isset($notes)&&isset($citaid)){
                 $nota = array(
+                    "CitaID" =>"\"\$citaid"",
                     "Notas" =>"\"$notes\""
                 );
 
