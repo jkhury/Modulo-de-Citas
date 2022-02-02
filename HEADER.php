@@ -7,7 +7,18 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-       
+        <style>
+            footer {
+                text-align: center;
+                padding:15px;
+                background-color: #d9edf7;
+                color: #4889be;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                height: 60px;
+            }
+        </style>
         
         <script src="Script/CitasJS.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -40,7 +51,4 @@
             </nav>
         </header>
 
-        <main id="body">
-        </body> 
-  
-</html>   
+        <main id="body"> 
